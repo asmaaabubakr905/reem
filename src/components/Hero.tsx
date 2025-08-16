@@ -33,13 +33,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          {/* Logo Placeholder */}
-          <div className="mb-8 flex justify-center">
-            <div className="w-24 h-24 bg-gradient-to-br from-[#67594B] to-[#E1CCA5] rounded-full flex items-center justify-center shadow-2xl transform hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-2xl">R</span>
-            </div>
-          </div>
-
+         
           {/* Content Container with Semi-transparent Background */}
           <div className="bg-white/25 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-2xl border border-white/20">
             {/* Title */}
