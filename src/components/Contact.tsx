@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, MessageCircle, Building2, Clock, Globe } from 'lucide-react';
+import { MapPin, Phone, Mail, MessageCircle, Building2, Clock, Globe, Navigation } from 'lucide-react';
 import { Language } from '../hooks/useLanguage';
 import { content } from '../data/content';
 import officeImg from '../assets/IMG_1294.png';
@@ -21,6 +21,25 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
   const handlePhone = () => {
     window.location.href = `tel:${currentContent.contact.mobile}`;
+  };
+
+  // Enhanced Google Maps handler for mobile - Marina Twin Towers coordinates
+  const handleGoogleMaps = () => {
+    const address = encodeURIComponent("Marina Twin Towers, Lusail City, Qatar");
+    const coords = "25.3865674,51.5234844"; // Correct Marina Twin Towers coordinates
+    
+    // For mobile devices, use the mobile-friendly Google Maps URL
+    if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      window.open(`https://maps.google.com/maps?q=${coords}&z=17&t=m`, '_blank');
+    } else {
+      window.open(`https://www.google.com/maps/search/?api=1&query=${coords}&zoom=17`, '_blank');
+    }
+  };
+
+  // Apple Maps handler for iOS devices
+  const handleAppleMaps = () => {
+    const coords = "25.3865674,51.5234844"; // Correct Marina Twin Towers coordinates
+    window.open(`https://maps.apple.com/?q=${coords}&z=17`, '_blank');
   };
 
   return (
@@ -63,7 +82,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
           {/* Contact Information Cards */}
           <div className="xl:col-span-1 space-y-6">
             {/* Address Card */}
-            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50">
+            <div className="group bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/50 cursor-pointer" onClick={handleGoogleMaps}>
               <div className="flex items-start space-x-6 rtl:space-x-reverse">
                 <div className="flex-shrink-0">
                   <div className="relative">
@@ -81,10 +100,13 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                     {language === 'ar' ? 'العنوان' : 'Address'}
                   </h3>
                   <p 
-                    className="text-gray-700 leading-relaxed"
+                    className="text-gray-700 leading-relaxed group-hover:text-[#67594B] transition-colors"
                     style={{ fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial' }}
                   >
                     {currentContent.contact.address}
+                  </p>
+                  <p className="text-sm text-[#67594B]/70 mt-2">
+                    {language === 'ar' ? 'اضغط للعرض في الخرائط' : 'Tap to view in maps'}
                   </p>
                 </div>
               </div>
@@ -114,6 +136,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                   >
                     {currentContent.contact.mobile}
                   </p>
+                  <p className="text-sm text-green-600/70 mt-2">
+                    {language === 'ar' ? 'اضغط للاتصال' : 'Tap to call'}
+                  </p>
                 </div>
               </div>
             </div>
@@ -142,6 +167,9 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                   >
                     {currentContent.contact.email}
                   </p>
+                  <p className="text-sm text-blue-600/70 mt-2">
+                    {language === 'ar' ? 'اضغط لإرسال بريد' : 'Tap to send email'}
+                  </p>
                 </div>
               </div>
             </div>
@@ -150,7 +178,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             <div className="flex flex-col gap-4 mt-8">
               <button
                 onClick={handleWhatsApp}
-                className="group relative overflow-hidden bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-8 py-4 rounded-2xl font-bold hover:from-[#128C7E] hover:to-[#25D366] transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-4 rtl:space-x-reverse"
+                className="group relative overflow-hidden bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white px-8 py-4 rounded-2xl font-bold hover:from-[#128C7E] hover:to-[#25D366] transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-4 rtl:space-x-reverse"
                 style={{ fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial' }}
               >
                 <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
@@ -160,7 +188,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
               <button
                 onClick={handleEmail}
-                className="group relative overflow-hidden bg-gradient-to-r from-[#67594B] to-[#E1CCA5] text-white px-8 py-4 rounded-2xl font-bold hover:from-[#E1CCA5] hover:to-[#67594B] transition-all duration-500 transform hover:scale-105 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-4 rtl:space-x-reverse"
+                className="group relative overflow-hidden bg-gradient-to-r from-[#67594B] to-[#E1CCA5] text-white px-8 py-4 rounded-2xl font-bold hover:from-[#E1CCA5] hover:to-[#67594B] transition-all duration-500 transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl flex items-center justify-center space-x-4 rtl:space-x-reverse"
                 style={{ fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial' }}
               >
                 <div className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
@@ -239,7 +267,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
               </div>
             </div>
 
-            {/* Enhanced Google Maps */}
+            {/* Enhanced Google Maps with Mobile-Friendly Options */}
             <div className="group bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden border border-white/50 hover:shadow-2xl transition-all duration-500">
               <div className="p-8 pb-6">
                 <div className="flex items-center justify-center space-x-3 rtl:space-x-reverse mb-6">
@@ -253,13 +281,14 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                 </div>
               </div>
               
-              <div className="px-8 pb-8">
+              <div className="px-8 pb-4">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                  {/* Mobile-optimized iframe with correct coordinates */}
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3606.6234936583424!2d51.5074!3d25.4097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45d8f1df5b0000%3A0x0!2sLusail%20City%2C%20Qatar!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.2!2d51.5234844!3d25.3865674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c34d1e74d62b:0x3936e796a7d7dc86!2sMarina%20Twin%20Towers%20B!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s&gestureHandling=cooperative"
                     width="100%"
-                    height="350"
-                    style={{ border: 0 }}
+                    height="300"
+                    style={{ border: 0, minHeight: '300px' }}
                     allowFullScreen={false}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -267,15 +296,54 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                     className="transition-all duration-500 group-hover:saturate-150"
                   />
                   
-                  {/* Map Overlay Button */}
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg cursor-pointer hover:bg-white transition-colors">
-                    <div className="flex items-center space-x-2 rtl:space-x-reverse text-[#67594B]">
-                      <MapPin className="w-4 h-4" />
-                      <span className="text-sm font-medium">
-                        {language === 'ar' ? 'اعرض في خرائط جوجل' : 'View in Google Maps'}
-                      </span>
+                  {/* Enhanced Map Overlay Buttons */}
+                  <div className="absolute top-4 left-4 right-4 flex flex-col gap-2 pointer-events-none">
+                    <div 
+                      className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg cursor-pointer hover:bg-white transition-colors pointer-events-auto"
+                      onClick={handleGoogleMaps}
+                    >
+                      <div className="flex items-center space-x-2 rtl:space-x-reverse text-[#67594B]">
+                        <Navigation className="w-4 h-4" />
+                        <span className="text-sm font-medium">
+                          {language === 'ar' ? 'فتح في خرائط جوجل' : 'Open in Google Maps'}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    {/* Apple Maps button for iOS devices */}
+                    <div 
+                      className="bg-white/95 backdrop-blur-sm rounded-xl px-4 py-3 shadow-lg cursor-pointer hover:bg-white transition-colors pointer-events-auto md:hidden"
+                      onClick={handleAppleMaps}
+                    >
+                      <div className="flex items-center space-x-2 rtl:space-x-reverse text-[#67594B]">
+                        <MapPin className="w-4 h-4" />
+                        <span className="text-sm font-medium">
+                          {language === 'ar' ? 'فتح في خرائط أبل' : 'Open in Apple Maps'}
+                        </span>
+                      </div>
                     </div>
                   </div>
+                </div>
+              </div>
+              
+              {/* Mobile-friendly navigation buttons */}
+              <div className="px-8 pb-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <button
+                    onClick={handleGoogleMaps}
+                    className="flex items-center justify-center space-x-3 rtl:space-x-reverse bg-gradient-to-r from-[#67594B] to-[#E1CCA5] text-white px-6 py-4 rounded-2xl font-bold hover:from-[#E1CCA5] hover:to-[#67594B] transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg"
+                  >
+                    <Navigation className="w-5 h-5" />
+                    <span>{language === 'ar' ? 'التوجيه بالخرائط' : 'Get Directions'}</span>
+                  </button>
+                  
+                  <button
+                    onClick={handlePhone}
+                    className="flex items-center justify-center space-x-3 rtl:space-x-reverse bg-white text-[#67594B] px-6 py-4 rounded-2xl font-bold hover:bg-[#67594B] hover:text-white transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg border-2 border-[#67594B]"
+                  >
+                    <Phone className="w-5 h-5" />
+                    <span>{language === 'ar' ? 'اتصل بنا' : 'Call Us'}</span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -300,13 +368,13 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
                 onClick={handlePhone}
-                className="bg-gradient-to-r from-[#67594B] to-[#E1CCA5] text-white px-8 py-4 rounded-2xl font-bold hover:from-[#E1CCA5] hover:to-[#67594B] transition-all duration-300 transform hover:scale-105 shadow-xl"
+                className="bg-gradient-to-r from-[#67594B] to-[#E1CCA5] text-white px-8 py-4 rounded-2xl font-bold hover:from-[#E1CCA5] hover:to-[#67594B] transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl"
               >
                 {language === 'ar' ? 'اتصل الآن' : 'Call Now'}
               </button>
               <button
                 onClick={handleWhatsApp}
-                className="bg-white text-[#67594B] px-8 py-4 rounded-2xl font-bold hover:bg-[#67594B] hover:text-white transition-all duration-300 transform hover:scale-105 shadow-xl border-2 border-[#67594B]"
+                className="bg-white text-[#67594B] px-8 py-4 rounded-2xl font-bold hover:bg-[#67594B] hover:text-white transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl border-2 border-[#67594B]"
               >
                 {language === 'ar' ? 'احجز استشارة' : 'Book Consultation'}
               </button>

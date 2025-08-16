@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+    import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Language } from '../hooks/useLanguage';
 import { content } from '../data/content';
@@ -84,7 +84,7 @@ const Navbar: React.FC<NavbarProps> = ({ language, toggleLanguage }) => {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-[#4A3C2C] hover:text-[#8B5A2B] p-2"
+                className="text-[#4A3C2C] hover:text-[#8B5A2B] p-2 rounded-lg hover:bg-[#FCF9CE]/50 transition-all duration-200"
               >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -92,24 +92,77 @@ const Navbar: React.FC<NavbarProps> = ({ language, toggleLanguage }) => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Enhanced Design */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-sm rounded-lg shadow-lg mt-2">
-              {navItems.map((item) => (
-                <button
-                  key={item.key}
-                  onClick={() => scrollToSection(item.sectionId)}
-                  className="block px-3 py-2 rounded-md text-base font-semibold text-[#4A3C2C] hover:text-[#8B5A2B] hover:bg-[#FCF9CE] w-full text-left rtl:text-right transition-colors duration-200"
-                  style={{ fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial' }}
-                >
-                  {currentContent.navbar[item.key as keyof typeof currentContent.navbar]}
-                </button>
-              ))}
+          <div className="md:hidden absolute left-4 right-4 top-full">
+            <div 
+              className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 overflow-hidden"
+              style={{
+                animation: 'slideDown 0.3s ease-out forwards',
+                transformOrigin: 'top'
+              }}
+            >
+              {/* Decorative top border */}
+              <div className="h-1 bg-gradient-to-r from-[#8B5A2B] via-[#67594B] to-[#8B5A2B]"></div>
+              
+              <div className="p-6 space-y-2">
+                {navItems.map((item, index) => (
+                  <button
+                    key={item.key}
+                    onClick={() => scrollToSection(item.sectionId)}
+                    className="group relative w-full text-left rtl:text-right px-4 py-4 rounded-xl font-semibold text-[#4A3C2C] hover:text-[#8B5A2B] transition-all duration-300 hover:bg-gradient-to-r hover:from-[#FCF9CE]/50 hover:to-[#FCF9CE]/30 hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
+                    style={{ 
+                      fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial',
+                      animationDelay: `${index * 0.1}s`,
+                      animation: 'fadeInUp 0.4s ease-out forwards'
+                    }}
+                  >
+                    {/* Hover indicator */}
+                    <div className="absolute right-3 rtl:left-3 rtl:right-auto top-1/2 transform -translate-y-1/2 w-0 h-0.5 bg-[#8B5A2B] group-hover:w-6 transition-all duration-300 rounded-full"></div>
+                    
+                    {/* Text with subtle glow effect on hover */}
+                    <span className="relative z-10 group-hover:drop-shadow-sm">
+                      {currentContent.navbar[item.key as keyof typeof currentContent.navbar]}
+                    </span>
+                  </button>
+                ))}
+                
+                {/* Decorative bottom element */}
+                <div className="pt-4 mt-4 border-t border-[#8B5A2B]/10">
+                  <div className="flex justify-center">
+                    <div className="w-12 h-1 bg-gradient-to-r from-transparent via-[#8B5A2B]/30 to-transparent rounded-full"></div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         )}
       </div>
+
+      {/* Custom CSS for animations */}
+      <style>{`
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-20px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </nav>
   );
 };
