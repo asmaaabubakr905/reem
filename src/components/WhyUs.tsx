@@ -132,80 +132,84 @@ const WhyUs: React.FC<WhyUsProps> = ({ language }) => {
               <img
                 src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop"
                 alt="AI Technology"
-                className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                className="w-full h-80 md:h-80 object-cover transition-transform duration-700 group-hover:scale-110"
               />
               
-              {/* Multiple Gradient Overlays */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#67594B]/90 via-[#67594B]/70 to-[#E1CCA5]/90"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#67594B]/50 via-transparent to-transparent"></div>
+              {/* Enhanced Gradient Overlays */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#67594B]/95 via-[#67594B]/80 to-[#E1CCA5]/85"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#67594B]/70 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#67594B]/20 to-[#67594B]/60"></div>
               
-              {/* Animated Particles */}
-              <div className="absolute inset-0">
-                <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/60 rounded-full animate-pulse"></div>
-                <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FCF9CE] rounded-full animate-bounce delay-300"></div>
-                <div className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-white/40 rounded-full animate-pulse delay-700"></div>
+              {/* Enhanced Animated Particles */}
+              <div className="absolute inset-0 hidden md:block">
+                <div className="absolute top-1/4 left-1/4 w-3 h-3 bg-white/70 rounded-full animate-pulse"></div>
+                <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-[#FCF9CE]/80 rounded-full animate-bounce delay-300"></div>
+                <div className="absolute bottom-1/4 left-1/3 w-2.5 h-2.5 bg-white/50 rounded-full animate-pulse delay-700"></div>
+                <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 bg-[#FCF9CE]/60 rounded-full animate-bounce delay-1000"></div>
+                <div className="absolute bottom-1/3 right-1/2 w-2 h-2 bg-white/40 rounded-full animate-pulse delay-1500"></div>
               </div>
             </div>
 
-            {/* Enhanced Content */}
-            <div className="absolute inset-0 flex items-center justify-center p-8">
-              <div className="text-center text-white max-w-4xl">
-                {/* Icon with Animation */}
-                <div className="relative inline-block mb-8">
-                  <div className="flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-4 mx-auto">
-                    <Zap className="w-12 h-12 text-white animate-pulse" />
+            {/* Enhanced Content - Fixed for Web display */}
+            <div className="absolute inset-0 flex items-center justify-center p-4 md:p-8">
+              <div className="text-center text-white w-full max-w-4xl flex flex-col items-center justify-center min-h-full">
+                {/* Enhanced Icon with Multiple Animations */}
+                <div className="relative inline-block mb-4 md:mb-6 flex-shrink-0">
+                  <div className="flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-white/15 backdrop-blur-md rounded-2xl md:rounded-3xl shadow-2xl border border-white/20">
+                    <Zap className="w-8 h-8 md:w-10 md:h-10 text-white animate-pulse" />
                   </div>
-                  {/* Rotating Ring */}
-                  <div className="absolute inset-0 w-20 h-20 border-2 border-white/30 rounded-2xl animate-spin mx-auto"></div>
+                  {/* Multiple Rotating Rings - Fixed positioning */}
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 md:w-20 md:h-20 border-2 border-white/20 rounded-2xl md:rounded-3xl animate-spin"></div>
+                  <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-14 h-14 md:w-18 md:h-18 border border-[#FCF9CE]/30 rounded-xl md:rounded-2xl animate-spin-reverse"></div>
+                  {/* Pulsing outer ring - Fixed positioning */}
+                  <div className="absolute -top-1 left-1/2 transform -translate-x-1/2 w-18 h-18 md:w-24 md:h-24 border border-white/10 rounded-2xl md:rounded-3xl animate-ping"></div>
                 </div>
 
                 <h3
-                  className="text-3xl md:text-4xl font-bold mb-6 leading-tight"
-                  style={{ fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial' }}
+                  className="text-xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-6 leading-tight px-2 flex-shrink-0"
+                  style={{ 
+                    fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial',
+                    textShadow: '0 4px 20px rgba(0,0,0,0.5)'
+                  }}
                 >
                   {language === 'ar' ? 'تقنيات الذكاء الاصطناعي المتقدمة' : 'Advanced AI Technology'}
                 </h3>
 
-                <div className="w-24 h-1 bg-white/60 mx-auto mb-8 rounded-full"></div>
+                {/* Enhanced Decorative Lines - Responsive */}
+                <div className="flex items-center justify-center space-x-2 md:space-x-4 rtl:space-x-reverse mb-4 md:mb-6 px-4 flex-shrink-0">
+                  <div className="w-6 md:w-12 h-1 bg-gradient-to-r from-transparent to-white/60 rounded-full"></div>
+                  <div className="w-2 h-2 md:w-3 md:h-3 bg-white/80 rounded-full animate-pulse"></div>
+                  <div className="w-8 md:w-16 h-1 bg-gradient-to-r from-white/60 via-[#FCF9CE]/80 to-white/60 rounded-full"></div>
+                  <div className="w-2 h-2 md:w-3 md:h-3 bg-[#FCF9CE]/80 rounded-full animate-pulse delay-500"></div>
+                  <div className="w-6 md:w-12 h-1 bg-gradient-to-l from-transparent to-white/60 rounded-full"></div>
+                </div>
 
                 <p
-                  className="text-xl opacity-90 leading-relaxed max-w-2xl mx-auto"
-                  style={{ fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial' }}
+                  className="text-sm md:text-lg lg:text-xl opacity-95 leading-relaxed max-w-xs md:max-w-2xl mx-auto font-light px-4 mb-4 md:mb-8 flex-shrink-0"
+                  style={{ 
+                    fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial',
+                    textShadow: '0 2px 10px rgba(0,0,0,0.3)'
+                  }}
                 >
                   {language === 'ar'
-                    ? 'نستخدم أحدث تقنيات الذكاء الاصطناعي لتحسين جودة خدماتنا وزيادة الكفاءة'
-                    : 'We leverage cutting-edge AI technology to enhance service quality and efficiency'
+                    ? 'نستخدم أحدث تقنيات الذكاء الاصطناعي والتعلم الآلي لتطوير حلول قانونية مبتكرة وتحسين جودة خدماتنا بشكل مستمر'
+                    : 'We leverage cutting-edge AI and machine learning technologies to develop innovative legal solutions and continuously enhance our service quality'
                   }
                 </p>
 
-               
+             
               </div>
             </div>
 
-            {/* Corner Decorations */}
-            <div className="absolute top-6 left-6 w-12 h-12 border-l-2 border-t-2 border-white/30 rounded-tl-2xl"></div>
-            <div className="absolute bottom-6 right-6 w-12 h-12 border-r-2 border-b-2 border-white/30 rounded-br-2xl"></div>
+            {/* Enhanced Corner Decorations - Hidden on mobile */}
+            <div className="hidden md:block absolute top-8 left-8 w-16 h-16 border-l-3 border-t-3 border-white/20 rounded-tl-3xl"></div>
+            <div className="hidden md:block absolute bottom-8 right-8 w-16 h-16 border-r-3 border-b-3 border-white/20 rounded-br-3xl"></div>
+            <div className="hidden md:block absolute top-8 right-8 w-8 h-8 border-2 border-white/30 rounded-full"></div>
+            <div className="hidden md:block absolute bottom-8 left-8 w-6 h-6 border-2 border-[#FCF9CE]/40 rounded-full"></div>
           </div>
         </div>
 
-        {/* Bottom Stats Section */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { number: '15+', label: language === 'ar' ? 'سنة خبرة' : 'Years Experience' },
-            { number: '500+', label: language === 'ar' ? 'عميل راضٍ' : 'Happy Clients' },
-            { number: '99%', label: language === 'ar' ? 'معدل نجاح' : 'Success Rate' }
-          ].map((stat, index) => (
-            <div key={index} className="text-center group">
-              <div className="bg-[#FCF9CE]/30 rounded-2xl p-8 hover:bg-[#FCF9CE]/50 transition-all duration-300 transform hover:-translate-y-2 shadow-lg hover:shadow-xl">
-                <div className="text-4xl md:text-5xl font-bold text-[#67594B] mb-2 group-hover:scale-110 transition-transform duration-300">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 font-medium">{stat.label}</div>
-                <div className="w-16 h-1 bg-gradient-to-r from-[#67594B] to-[#E1CCA5] mx-auto mt-4 rounded-full group-hover:w-24 transition-all duration-300"></div>
-              </div>
-            </div>
-          ))}
-        </div>
+      
       </div>
     </section>
   );

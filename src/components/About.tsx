@@ -101,50 +101,11 @@ const About: React.FC<AboutProps> = ({ language }) => {
               </p>
 
               {/* Enhanced Stats Grid */}
-              <div className="grid grid-cols-2 gap-6">
-                <div className="group bg-gradient-to-br from-[#FCF9CE] to-[#E1CCA5] p-6 rounded-2xl text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center justify-center w-12 h-12 bg-[#67594B] rounded-full mx-auto mb-3">
-                    <Clock className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-[#67594B] mb-2">15+</div>
-                  <div className="text-sm text-[#67594B]/80 font-medium">
-                    {language === 'ar' ? 'سنة خبرة' : 'Years Experience'}
-                  </div>
-                </div>
-
-                <div className="group bg-gradient-to-br from-[#E1CCA5] to-[#FCF9CE] p-6 rounded-2xl text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                  <div className="flex items-center justify-center w-12 h-12 bg-[#67594B] rounded-full mx-auto mb-3">
-                    <Users className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="text-3xl font-bold text-[#67594B] mb-2">500+</div>
-                  <div className="text-sm text-[#67594B]/80 font-medium">
-                    {language === 'ar' ? 'عميل راضٍ' : 'Happy Clients'}
-                  </div>
-                </div>
-              </div>
+             
             </div>
 
-            {/* Additional Features */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white/60 backdrop-blur-sm p-4 rounded-2xl text-center border border-white/30">
-                <div className="text-2xl font-bold text-[#67594B] mb-1">24/7</div>
-                <div className="text-sm text-[#67594B]/70">
-                  {language === 'ar' ? 'دعم متواصل' : 'Support'}
-                </div>
-              </div>
-              <div className="bg-white/60 backdrop-blur-sm p-4 rounded-2xl text-center border border-white/30">
-                <div className="text-2xl font-bold text-[#67594B] mb-1">100%</div>
-                <div className="text-sm text-[#67594B]/70">
-                  {language === 'ar' ? 'سرية تامة' : 'Confidential'}
-                </div>
-              </div>
-              <div className="bg-white/60 backdrop-blur-sm p-4 rounded-2xl text-center border border-white/30">
-                <div className="text-2xl font-bold text-[#67594B] mb-1">50+</div>
-                <div className="text-sm text-[#67594B]/70">
-                  {language === 'ar' ? 'خبير متخصص' : 'Experts'}
-                </div>
-              </div>
-            </div>
+           
+           
           </div>
         </div>
 
