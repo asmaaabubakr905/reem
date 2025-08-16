@@ -178,15 +178,7 @@ const WhyUs: React.FC<WhyUsProps> = ({ language }) => {
                   }
                 </p>
 
-                {/* Call to Action */}
-                <div className="mt-10">
-                  <button className="group/btn bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-2xl font-bold hover:bg-white hover:text-[#67594B] transition-all duration-500 transform hover:scale-105 shadow-lg border border-white/30">
-                    <span className="flex items-center space-x-3 rtl:space-x-reverse">
-                      <span>{language === 'ar' ? 'اكتشف المزيد' : 'Learn More'}</span>
-                      <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform duration-300" />
-                    </span>
-                  </button>
-                </div>
+               
               </div>
             </div>
 
