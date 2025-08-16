@@ -206,7 +206,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                 <div className="flex items-center justify-center space-x-3 rtl:space-x-reverse mb-6">
                   <Building2 className="w-6 h-6 text-[#67594B]" />
                   <h3 
-                    className="text-2xl font-bold text-[#67594B] text-center"
+                    className="text-2xl font-bold text-[#67594B] text-center "
                     style={{ fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial' }}
                   >
                     {language === 'ar' ? 'مكتبنا الرئيسي' : 'Our Main Office'}
@@ -215,11 +215,11 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
               </div>
               
               <div className="relative px-8">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl mb-10">
                   <img 
                     src={officeImg}
                     alt="Marina Twin Towers Office"
-                    className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-100 object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Enhanced Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#67594B]/90 via-transparent to-transparent"></div>
@@ -235,36 +235,12 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                     </div>
                   </div>
                   
-                  {/* Floating Info Cards */}
-                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl px-4 py-2 shadow-lg">
-                    <div className="flex items-center space-x-2 rtl:space-x-reverse text-[#67594B]">
-                      <Clock className="w-4 h-4" />
-                      <span className="text-sm font-medium">
-                        {language === 'ar' ? '٩ص - ٦م' : '9 AM - 6 PM'}
-                      </span>
-                    </div>
-                  </div>
+                 
+
                 </div>
               </div>
               
-              <div className="p-8 pt-6">
-                <div className="bg-gradient-to-r from-[#FCF9CE] to-[#E1CCA5] rounded-2xl p-6">
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div>
-                      <div className="text-2xl font-bold text-[#67594B]">15+</div>
-                      <div className="text-sm text-[#67594B]/70">
-                        {language === 'ar' ? 'سنة خبرة' : 'Years Experience'}
-                      </div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-[#67594B]">500+</div>
-                      <div className="text-sm text-[#67594B]/70">
-                        {language === 'ar' ? 'عميل راضٍ' : 'Happy Clients'}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+             
             </div>
 
             {/* Enhanced Google Maps with Mobile-Friendly Options */}
