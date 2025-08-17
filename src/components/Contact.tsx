@@ -70,12 +70,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             <div className="w-4 h-4 bg-[#67594B] rounded-full animate-pulse"></div>
             <div className="w-16 h-1 bg-gradient-to-l from-transparent to-[#67594B] rounded-full"></div>
           </div>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
-            {language === 'ar' 
-              ? 'نحن هنا لمساعدتك في جميع احتياجاتك القانونية والاستشارية'
-              : 'We are here to assist you with all your legal and advisory needs'
-            }
-          </p>
+         
         </div>
 
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
