@@ -29,7 +29,7 @@ const Services: React.FC<ServicesProps> = ({ language }) => {
   };
 
   // Single professional image for the services
-  const serviceImage = "https://images.pexels.com/photos/8962456/pexels-photo-8962456.jpeg?_gl=1*zp7scb*_ga*MTY3MjQ0MzUzOS4xNzQ4MTY4MDI4*_ga_8JE65Q40S6*czE3NTU0MzM1OTAkbzckZzEkdDE3NTU0MzM2MDgkajQyJGwwJGgw";
+  const serviceImage = "https://plus.unsplash.com/premium_photo-1661377104302-2d581083e9b0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
 
   return (
     <section id="services" className="relative py-20 overflow-hidden">
