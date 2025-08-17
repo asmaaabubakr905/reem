@@ -29,7 +29,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             className="w-16 h-16 object-contain mb-3 rounded-lg shadow-md bg-white/10"
           />
           <h3 className="text-2xl font-bold mb-1" style={fontStyle}>
-            {language === 'ar' ? 'ريم حسين العوذلي' : 'Reem Hussein Al-Oudhali'}
+            {language === 'ar' ? 'ريم حسين العوذلي' : 'Reem Hussain AlOzali'}
           </h3>
           <p className="text-base opacity-90 mb-2" style={fontStyle}>
             {language === 'ar' ? 'للتدقيق والمحاسبة' : 'for Auditing & Accounting'}
@@ -61,7 +61,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
           <p className="text-xs opacity-70" style={fontStyle}>
             {language === 'ar'
               ? 'حقوق النشر © 2025 – ريم حسين العوذلي للتدقيق والمحاسبة.'
-              : 'Copyright © 2025 – Reem Hussein Al-Oudhali for Auditing & Accounting.'}
+              : 'Copyright © 2025 – Reem Hussain AlOzali for Auditing & Accounting.'}
           </p>
         </div>
       </div>
