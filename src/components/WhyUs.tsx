@@ -12,6 +12,9 @@ const WhyUs: React.FC<WhyUsProps> = ({ language }) => {
 
   const icons = [Star, CheckCircle, Clock, Users, Zap];
 
+  // Professional image for why us section
+  const whyUsImage = "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop";
+
   return (
     <section id="why-us" className="relative py-20 overflow-hidden">
       {/* Animated Background */}
@@ -30,11 +33,7 @@ const WhyUs: React.FC<WhyUsProps> = ({ language }) => {
         {/* Enhanced Header */}
         <div className="text-center mb-20">
           <div className="inline-flex items-center space-x-2 rtl:space-x-reverse bg-[#FCF9CE]/50 px-6 py-3 rounded-full mb-6 backdrop-blur-sm">
-            <Sparkles className="w-5 h-5 text-[#67594B]" />
-            <span className="text-[#67594B] font-semibold tracking-wider text-sm uppercase">
-              {language === 'ar' ? 'لماذا تختارنا' : 'Why Choose Us'}
-            </span>
-            <Sparkles className="w-5 h-5 text-[#67594B]" />
+           
           </div>
           
           <h2 
@@ -52,66 +51,117 @@ const WhyUs: React.FC<WhyUsProps> = ({ language }) => {
             </div>
             <div className="w-20 h-1 bg-gradient-to-l from-transparent to-[#67594B] rounded-full"></div>
           </div>
-
-          <p className="text-gray-600 text-xl max-w-3xl mx-auto leading-relaxed">
-            {language === 'ar' 
-              ? 'نتميز بالخبرة الواسعة والتقنيات المتطورة لنقدم لك أفضل الحلول القانونية'
-              : 'We excel with extensive experience and advanced technologies to provide you the best legal solutions'
-            }
-          </p>
         </div>
 
-        {/* Enhanced Features Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-          {currentContent.whyUs.items.map((item, index) => {
-            const Icon = icons[index];
-            return (
-              <div
-                key={index}
-                className="group relative bg-white/70 backdrop-blur-sm border border-[#FCF9CE]/50 rounded-2xl p-8 hover:bg-[#FCF9CE]/30 transition-all duration-500 transform hover:-translate-y-3 hover:shadow-2xl shadow-lg"
-              >
-                {/* Card Number */}
-                <div className="absolute -top-4 -right-4 w-10 h-10 bg-gradient-to-br from-[#67594B] to-[#E1CCA5] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg">
-                  {index + 1}
-                </div>
-
-                {/* Animated Background Pattern */}
+        {/* Single Why Us Box */}
+        <div className="max-w-6xl mx-auto mb-20">
+          <div className="group relative bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-white/50">
+            
+            {/* Why Us Grid Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              
+              {/* Image Section */}
+              <div className="relative h-96 lg:h-full overflow-hidden">
+                <img
+                  src={whyUsImage}
+                  alt="Why Choose Us"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                
+                {/* Multiple Overlay Effects */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#67594B]/90 via-[#67594B]/30 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#E1CCA5]/10 to-[#E1CCA5]/20"></div>
+                
+                {/* Animated Particles */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#FCF9CE]/20 rounded-full transform translate-x-16 -translate-y-16"></div>
-                  <div className="absolute bottom-0 left-0 w-24 h-24 bg-[#E1CCA5]/10 rounded-full transform -translate-x-12 translate-y-12"></div>
+                  <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-white/60 rounded-full animate-pulse"></div>
+                  <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-[#FCF9CE] rounded-full animate-bounce delay-300"></div>
+                  <div className="absolute bottom-1/3 left-1/2 w-1.5 h-1.5 bg-white/40 rounded-full animate-pulse delay-700"></div>
                 </div>
 
-                <div className="relative z-10 flex items-start space-x-6 rtl:space-x-reverse">
-                  <div className="flex-shrink-0">
-                    <div className="relative">
-                      <div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#67594B] to-[#E1CCA5] rounded-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg">
-                        <Icon className="w-8 h-8 text-white" />
-                      </div>
-                      {/* Pulsing Ring */}
-                      <div className="absolute inset-0 w-16 h-16 bg-[#67594B]/20 rounded-2xl group-hover:scale-125 group-hover:opacity-0 transition-all duration-500"></div>
-                    </div>
+                {/* Excellence Badge */}
+                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg">
+                  <div className="flex items-center space-x-2">
+                    <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                    <span className="text-sm font-bold text-[#67594B]">
+                      {language === 'ar' ? 'التميز' : 'Excellence'}
+                    </span>
                   </div>
-                  
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="w-12 h-1 bg-gradient-to-r from-[#67594B] to-[#E1CCA5] rounded-full group-hover:w-20 transition-all duration-500"></div>
-                      <ArrowRight className="w-5 h-5 text-[#67594B] opacity-0 group-hover:opacity-100 transform translate-x-2 group-hover:translate-x-0 transition-all duration-500" />
-                    </div>
-                    
-                    <p
-                      className="text-[#67594B] text-lg leading-relaxed group-hover:text-[#67594B] transition-colors duration-300"
-                      style={{ fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial' }}
-                    >
-                      {item}
-                    </p>
+                </div>
 
-                    {/* Bottom accent */}
-                    <div className="mt-6 w-0 h-0.5 bg-gradient-to-r from-[#E1CCA5] to-[#67594B] group-hover:w-full transition-all duration-700 ease-out"></div>
+                {/* Professional Icon */}
+                <div className="absolute bottom-6 left-6">
+                  <div className="relative">
+                    <div className="flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-md rounded-2xl border border-white/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                      <Users className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="absolute inset-0 w-16 h-16 border-2 border-white/20 rounded-2xl group-hover:animate-spin"></div>
                   </div>
                 </div>
               </div>
-            );
-          })}
+
+              {/* Content Section */}
+              <div className="relative p-8 lg:p-12">
+                {/* Background Pattern */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-[#FCF9CE]/20 rounded-full transform translate-x-12 -translate-y-12 group-hover:scale-150 transition-transform duration-700"></div>
+                
+                <div className="relative z-10">
+                  {/* Section Title */}
+                  <div className="inline-flex items-center bg-[#FCF9CE]/60 px-6 py-3 rounded-full mb-8">
+                    <Sparkles className="w-5 h-5 text-[#67594B] mr-2" />
+                    <span className="text-[#67594B] text-lg font-semibold">
+                      {language === 'ar' ? 'مميزاتنا' : 'Our Advantages'}
+                    </span>
+                  </div>
+
+                  {/* Features List */}
+                  <div className="space-y-6">
+                    {currentContent.whyUs.items.map((item, index) => {
+                      const Icon = icons[index];
+                      return (
+                        <div 
+                          key={index} 
+                          className="flex items-start space-x-4 rtl:space-x-reverse group/item hover:translate-x-2 rtl:hover:-translate-x-2 transition-transform duration-300"
+                        >
+                          <div className="flex-shrink-0 mt-1">
+                            <div className="relative">
+                              <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#67594B] to-[#E1CCA5] rounded-xl group-hover/item:scale-110 group-hover/item:rotate-6 transition-all duration-300 shadow-lg">
+                                <Icon className="w-6 h-6 text-white" />
+                              </div>
+                              <div className="absolute inset-0 w-12 h-12 bg-[#67594B]/20 rounded-xl group-hover/item:scale-125 group-hover/item:opacity-0 transition-all duration-300"></div>
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <div className="w-8 h-1 bg-gradient-to-r from-[#67594B] to-[#E1CCA5] rounded-full group-hover/item:w-16 transition-all duration-300 mb-3"></div>
+                            <p
+                              className="text-[#67594B] text-lg leading-relaxed font-medium group-hover/item:text-[#67594B]/80 transition-colors duration-300"
+                              style={{ fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial' }}
+                            >
+                              {item}
+                            </p>
+                            <div className="mt-3 w-0 h-0.5 bg-gradient-to-r from-[#E1CCA5] to-[#67594B] group-hover/item:w-full transition-all duration-500 ease-out"></div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Bottom Decorative Element */}
+                  <div className="mt-12 flex items-center justify-between">
+                    <div className="w-0 h-1 bg-gradient-to-r from-[#67594B] to-[#E1CCA5] rounded-full group-hover:w-32 transition-all duration-700"></div>
+                    
+                    <div className="flex items-center space-x-2 rtl:space-x-reverse opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                     
+                      {/* <ArrowRight className="w-4 h-4 text-[#67594B] group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform duration-300" /> */}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Hover Border Effect */}
+            <div className="absolute inset-0 rounded-3xl border-2 border-[#67594B]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          </div>
         </div>
 
         {/* Enhanced AI Technology Section */}
@@ -196,8 +246,6 @@ const WhyUs: React.FC<WhyUsProps> = ({ language }) => {
                     : 'We leverage cutting-edge AI and machine learning technologies to develop innovative legal solutions and continuously enhance our service quality'
                   }
                 </p>
-
-             
               </div>
             </div>
 
@@ -208,8 +256,6 @@ const WhyUs: React.FC<WhyUsProps> = ({ language }) => {
             <div className="hidden md:block absolute bottom-8 left-8 w-6 h-6 border-2 border-[#FCF9CE]/40 rounded-full"></div>
           </div>
         </div>
-
-      
       </div>
     </section>
   );

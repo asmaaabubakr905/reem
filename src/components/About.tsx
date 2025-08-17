@@ -23,9 +23,9 @@ const About: React.FC<AboutProps> = ({ language }) => {
         {/* Enhanced Header */}
         <div className="text-center mb-20">
           <div className="inline-block mb-4">
-            <span className="bg-gradient-to-r from-[#67594B] to-[#E1CCA5] bg-clip-text text-transparent font-bold text-lg tracking-wider">
+            {/* <span className="bg-gradient-to-r from-[#67594B] to-[#E1CCA5] bg-clip-text text-transparent font-bold text-lg tracking-wider">
               {language === 'ar' ? 'تعرف علينا' : 'ABOUT US'}
-            </span>
+            </span> */}
           </div>
           <h2 
             className="text-5xl md:text-7xl font-bold text-[#67594B] mb-6 leading-tight"
@@ -38,12 +38,12 @@ const About: React.FC<AboutProps> = ({ language }) => {
             <div className="w-4 h-4 bg-[#67594B] rounded-full animate-pulse"></div>
             <div className="w-16 h-1 bg-gradient-to-l from-transparent to-[#67594B] rounded-full"></div>
           </div>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+          {/* <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
             {language === 'ar' 
               ? 'نحن فريق من المحترفين ذوي الخبرة في مجال القانون والاستشارات'
               : 'We are a team of experienced professionals in law and consulting'
             }
-          </p>
+          </p> */}
         </div>
 
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-12 items-center">
@@ -87,12 +87,12 @@ const About: React.FC<AboutProps> = ({ language }) => {
           {/* Enhanced Content Section */}
           <div className="space-y-8">
             <div className="bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-xl border border-white/50">
-              <h3 
+              {/* <h3 
                 className="text-2xl font-bold text-[#67594B] mb-6"
                 style={{ fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial' }}
               >
                 {language === 'ar' ? 'قصتنا' : 'Our Story'}
-              </h3>
+              </h3> */}
               <p 
                 className="text-lg text-gray-700 leading-relaxed mb-6"
                 style={{ fontFamily: language === 'ar' ? 'GE Snd Book, Arial' : 'Acumin Variable Concept, Arial' }}

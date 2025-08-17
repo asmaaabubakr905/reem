@@ -44,8 +44,8 @@ export const content: { ar: ContentData; en: ContentData } = {
   ar: {
     navbar: {
       home: "الرئيسية",
-      about: "التعريف",
-      services: "الخدمات",
+      about: "من نحن",
+      services: "خدماتنا",
       whyUs: "المزايا",
       contact: "التواصل"
     },
@@ -56,7 +56,7 @@ export const content: { ar: ContentData; en: ContentData } = {
       sendEmail: "إرسال بريد"
     },
     about: {
-      title: "التعريف",
+      title: "من نحن",
       description: "مكتب مهني مرخّص يقدم خدمات المراجعة وتدقيق الحسابات، وإعداد التقارير المالية، والخدمات الاستشارية والضريبية، مع اعتماد أحدث التقنيات وأدوات الذكاء الاصطناعي لضمان أعلى مستويات الكفاءة والدقة، وفق أعلى المعايير المهنية والقوانين المحلية."
     },
     services: {
@@ -103,13 +103,13 @@ export const content: { ar: ContentData; en: ContentData } = {
       contact: "Contact"
     },
     hero: {
-      title: "Reem Hussein Al-Oudhali for Auditing & Accounting",
+      title: "Reem Hussain AlOzali for Auditing & Accounting",
       slogan: "Audit Expertise & Accounting Vision That Makes a Difference",
       callUs: "Call Us",
       sendEmail: "Send Email"
     },
     about: {
-      title: "About",
+      title: "About Us",
       description: "A licensed professional office providing audit and accounting services, preparation of financial reports, and financial and tax advisory, while adopting the latest technologies and AI tools to ensure the highest levels of efficiency and accuracy, in compliance with the highest professional standards and local regulations."
     },
     services: {
